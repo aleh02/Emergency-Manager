@@ -3,6 +3,7 @@
 #include <string.h>
 #include "rescuers.h"
 #include "macro.h"
+#include "emergency.h"
 
 #define MAX_NAME_SIZE 64
 #define MAX_LINE_LENGTH 256
@@ -83,6 +84,6 @@ int parse_emergency_types(char* filename, emergency_type_t ** types_out, int * c
     fclose(file);
     *types_out = types;
     *count_out = type_count;
-    
+
     return 0;
 }  
