@@ -10,19 +10,6 @@
 #define MAX_TYPE_SIZE 10
 #define MAX_RESCUERS 10
 
-typedef struct {
-    rescuer_type_t* type;
-    int required_count;
-    int time_to_manage;
-} rescuer_request_t;
-
-typedef struct {
-    short priority;
-    char* emergency_desc;
-    rescuer_request_t* rescuers;
-    int rescuers_req_number;
-} emergency_type_t;
-
 char* trim(char* str) { //pulisce spazi vuoti
     while (*str == ' ' || *str == '\t' || *str == '\n') str++;  //salto caratteri vuoti iniziali
     if (*str == 0) return str;  //stringa vuota
