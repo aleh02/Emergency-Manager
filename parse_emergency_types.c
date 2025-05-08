@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "rescuers.h"
 #include "macro.h"
-#include "emergency.h"
+#include "parse_rescuers.h"
+#include "parse_emergency.h"
 
 #define MAX_NAME_SIZE 64
 #define MAX_LINE_LENGTH 256
