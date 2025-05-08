@@ -1,7 +1,7 @@
-#ifndef EMERGENCY_H
-#define EMERGENCY_H
+#ifndef PARSE_EMERGENCY_H
+#define PARSE_EMERGENCY_H
 
-#include "rescuers.h"
+#include "parse_rescuers.h"
 
 typedef struct {
     rescuer_type_t* type;
