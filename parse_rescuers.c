@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "rescuers.h"
 #include "macro.h"
+#include "parse_rescuers.h"
 
 #define MAX_LINE_LENGTH 256
 #define MAX_TYPE_SIZE 10
