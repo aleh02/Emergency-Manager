@@ -1,0 +1,11 @@
+Incendio 100 100 0
+Allagamento 150 150 1
+Sommossa 75 25 2
+Terremoto 50 50 3
+Incendio -10 50 4
+Allagamento 500 500 5
+Allagamento 50 50
+Incendio 100 100 notatime
+Sommossa 75 25 6
+Sommossa 75 25 7
+Allagamento 200 200 -1

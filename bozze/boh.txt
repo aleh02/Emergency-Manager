@@ -1,0 +1,40 @@
+# Compilatore e flags
+CC = gcc
+CFLAGS = -Wall -Wextra -std=c11 -g -D_POSIX_C_SOURCE=200809L
+
+# Sorgenti principali
+SRCS = main.c \
+       parse_env.c \
+       parse_rescuers.c \
+       parse_emergency_types.c \
+	   logger.c \
+	   dispatcher.c \
+	   emergency_manager.c \
+	   emergency_thread.c \
+	   message_queue.c
+	   
+
+# Da SRCS ottengo i nomi .o
+OBJS = $(SRCS:.c=.o)
+
+# Eseguibile finale
+TARGET = emergency_manager
+
+# Regola principale
+all: $(TARGET)
+
+$(TARGET): $(OBJS)
+	$(CC) $(CFLAGS) -o $@ $^
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+# Esegui
+run: $(TARGET)
+	./$(TARGET)
+
+# Pulisci tutto
+clean:
+	rm -f $(OBJS) $(TARGET)
+
+.PHONY: all run clean
