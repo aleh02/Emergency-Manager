@@ -119,7 +119,7 @@ Every event (enqueue, dequeue, assignment, completion…) is recorded through a 
 
 ## ⚙️ Build & Run
 
-### ### 🔧 Requirements
+### 🔧 Requirements
 - GCC or Clang
 - POSIX-compliant environment (Linux, macOS)
 - Make
@@ -129,13 +129,15 @@ Every event (enqueue, dequeue, assignment, completion…) is recorded through a 
 make
 
 ./emergency_system
+```
 
+### ▶ Example Output
+```bash
 [INFO] Emergency received: ID=42, PRIORITY=3
 [INFO] Added to priority queue
 [INFO] Dispatcher assigning emergency 42 to Responder #2
 [INFO] Responder #2 started mission (duration: 12s)
 [INFO] Responder #2 returned from mission
-
 ```
 
 ---
