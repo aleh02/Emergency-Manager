@@ -54,30 +54,30 @@ Every event (enqueue, dequeue, assignment, completion…) is recorded through a 
 
 ## 🏛 Architecture
                    ╔═══════════════════════╗
-                   ║      Emergency         ║
-                   ║       Sender           ║
+                   ║      Emergency        ║
+                   ║       Sender          ║
                    ╚═══════════════════════╝
                               │
                               ▼
                 ╔══════════════════════════════╗
-                ║     POSIX Message Queue       ║
+                ║     POSIX Message Queue      ║
                 ╚══════════════════════════════╝
                               │
                               ▼
                 ╔══════════════════════════════╗
-                ║        Emergency Receiver     ║
+                ║        Emergency Receiver    ║
                 ╚══════════════════════════════╝
                               │
                               ▼
                 ╔══════════════════════════════╗
-                ║        Priority Queue         ║
-                ║ (protected by a mutex lock)   ║
+                ║        Priority Queue        ║
+                ║ (protected by a mutex lock)  ║
                 ╚══════════════════════════════╝
                               │
                               ▼
                 ╔══════════════════════════════╗
-                ║          Dispatcher           ║
-                ║    (thread + queue mutex)     ║
+                ║          Dispatcher          ║
+                ║    (thread + queue mutex)    ║
                 ╚══════════════════════════════╝
                               │
               assigns emergencies to available units
