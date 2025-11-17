@@ -54,24 +54,43 @@ Every event (enqueue, dequeue, assignment, completion…) is recorded through a 
 
 ## 🏛 Architecture
 +-------------------+ +----------------------+
+
 | POSIX Message | -----> | Emergency Receiver |
+
 | Queue | +----------------------+
+
 | (incoming calls) | |
+
 +-------------------+ v
+
 +-------------------------+
+
 | Priority Queue |
+
 +-------------------------+
+
 |
+
 v
+
 +-------------------------+
+
 | Dispatcher |
+
 | (thread + queue lock) |
+
 +-------------------------+
+
 | assigns emergencies to |
+
 v available units
+
 +------------------+ +------------------+
+
 | Responder #1 | | Responder #2 |
+
 | (thread, mission)| | (thread, mission)|
+
 +------------------+ +------------------+
 
 
