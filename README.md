@@ -53,46 +53,40 @@ Every event (enqueue, dequeue, assignment, completion…) is recorded through a 
 ---
 
 ## 🏛 Architecture
-+-------------------+ +----------------------+
-
-| POSIX Message | -----> | Emergency Receiver |
-
-| Queue | +----------------------+
-
-| (incoming calls) | |
-
-+-------------------+ v
-
-+-------------------------+
-
-| Priority Queue |
-
-+-------------------------+
-
-|
-
-v
-
-+-------------------------+
-
-| Dispatcher |
-
-| (thread + queue lock) |
-
-+-------------------------+
-
-| assigns emergencies to |
-
-v available units
-
-+------------------+ +------------------+
-
-| Responder #1 | | Responder #2 |
-
-| (thread, mission)| | (thread, mission)|
-
-+------------------+ +------------------+
-
+                   ╔═══════════════════════╗
+                   ║      Emergency         ║
+                   ║       Sender           ║
+                   ╚═══════════════════════╝
+                              │
+                              ▼
+                ╔══════════════════════════════╗
+                ║     POSIX Message Queue       ║
+                ╚══════════════════════════════╝
+                              │
+                              ▼
+                ╔══════════════════════════════╗
+                ║        Emergency Receiver     ║
+                ╚══════════════════════════════╝
+                              │
+                              ▼
+                ╔══════════════════════════════╗
+                ║        Priority Queue         ║
+                ║ (protected by a mutex lock)   ║
+                ╚══════════════════════════════╝
+                              │
+                              ▼
+                ╔══════════════════════════════╗
+                ║          Dispatcher           ║
+                ║    (thread + queue mutex)     ║
+                ╚══════════════════════════════╝
+                              │
+              assigns emergencies to available units
+                              │
+                              ▼
+    ╔════════════════════╗          ╔════════════════════╗
+    ║    Responder #1    ║   ...    ║    Responder #N    ║
+    ║ (thread: mission)  ║          ║ (thread: mission)  ║
+    ╚════════════════════╝          ╚════════════════════╝
 
 ---
 
