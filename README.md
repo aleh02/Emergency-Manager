@@ -80,14 +80,20 @@ v available units
 
 ## 🗂 Project Structure
 
-
 /src
+
 ├── dispatcher.c / dispatcher.h
+
 ├── emergency.c / emergency.h
+
 ├── queue.c / queue.h
+
 ├── responder.c / responder.h
+
 ├── logger.c / logger.h
+
 ├── utils.c / utils.h
+
 ├── main.c
 
 
@@ -141,6 +147,8 @@ make
 👤 Author
 
 Alessandro Han
+
 Computer Science, University of Pisa
+
 LinkedIn: https://www.linkedin.com/in/alessandro-han-b87391223/
 
