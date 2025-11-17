@@ -146,7 +146,7 @@ make
 
 ---
 
-🧠 Core Concepts Demonstrated
+## 🧠 Core Concepts Demonstrated
 
 -Concurrency and synchronization
 
@@ -162,7 +162,7 @@ make
 
 ---
 
-👤 Author
+## 👤 Author
 
 Alessandro Han
 
