@@ -127,7 +127,9 @@ Every event (enqueue, dequeue, assignment, completion…) is recorded through a 
 ### ▶ Compile
 ```bash
 make
-
+```
+### ▶ Run
+```bash
 ./emergency_system
 ```
 
