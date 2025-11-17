@@ -53,7 +53,6 @@ Every event (enqueue, dequeue, assignment, completion…) is recorded through a 
 ---
 
 ## 🏛 Architecture
-
 +-------------------+ +----------------------+
 | POSIX Message | -----> | Emergency Receiver |
 | Queue | +----------------------+
