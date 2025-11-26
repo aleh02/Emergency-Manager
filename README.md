@@ -1,6 +1,5 @@
 # 🚨 Emergency Management System
 A multithreaded emergency dispatching system written in C (C11), implementing message queues, concurrency control, and digital-twin responders.  
-Developed as part of *Laboratorio 2 – Università di Pisa*.
 
 ---
 
